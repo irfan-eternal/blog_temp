@@ -649,7 +649,7 @@ def xor_key(data, key):
                 payloadkey += hex(i)[2:]
             
             return payloadkey
-key =  "506ee0400a3b2349834aca37b88e6942c746f62aeb1d85e8463a41f8146639ac366dbe33c3806411026e81b87a5a2b03c16f213786e33e8a3ae8ba706342"
+key =  	askString​("XOR Key", "Please Provide XOR Key as hexstring")
 key = bytearray.fromhex(key)
 
 
