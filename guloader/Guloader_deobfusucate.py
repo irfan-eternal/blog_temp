@@ -20,6 +20,8 @@ import struct
 dis = Disassembler.getDisassembler(currentProgram, ConsoleTaskMonitor(), None)
 mem = currentProgram.getMemory()
 listing = currentProgram.getListing()
+key_eip = 	askString​("XOR KEY for EIP Modification", "Provide the key as Hex String with out Ox Example if the key is 0x6A Provide it as 6A")
+key_eip = int(key_eip, 16)
 
 def handleSingleStepException(): 
     address_array = findBytes(currentProgram.getMinAddress(), b'\\\x9c\\\x89', 1000)
