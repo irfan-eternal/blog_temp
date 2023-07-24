@@ -37,7 +37,7 @@ def handleSingleStepException():
            math_addr = exception_addr.add(2)
            math_byte = mem.getByte(math_addr)
            math_byte = math_byte & 0xFF
-           eip_displacement = math_byte ^ 0x6A
+           eip_displacement = math_byte ^ key_eip
            eip_displacement = eip_displacement - 2
            patch_instruction = bytearray()
            patch_instruction.append(0xeb)
@@ -68,7 +68,7 @@ def handlesingleBreak(addr):
         math_byte = mem.getByte(math_addr)
         math_byte = math_byte & 0xFF
         ##print(math_byte)
-        eip_displacement = math_byte ^ 0x6A
+        eip_displacement = math_byte ^ key_eip
         eip_displacement = eip_displacement - 2
         patch_instruction = bytearray()
         patch_instruction.append(0xeb)
@@ -106,7 +106,7 @@ def handleBreakpointException():
         math_byte = mem.getByte(math_addr)
         math_byte = math_byte & 0xFF
         ##print(math_byte)
-        eip_displacement = math_byte ^ 0x6A
+        eip_displacement = math_byte ^ key_eip
         eip_displacement = eip_displacement - 2
         patch_instruction = bytearray()
         patch_instruction.append(0xeb)
@@ -219,7 +219,7 @@ def handlememoryviolationException():
             math_byte = mem.getByte(math_addr)
             math_byte = math_byte & 0xFF
             ##print(math_byte)
-            eip_displacement = math_byte ^ 0x6A
+            eip_displacement = math_byte ^ key_eip
             eip_displacement = eip_displacement - 2
             patch_instruction = bytearray()
             patch_instruction.append(0xeb)
@@ -362,7 +362,7 @@ def string_decryption(address):
                                 math_byte = mem.getByte(math_addr)
                                 math_byte = math_byte & 0xFF
                                 ##print(math_byte)
-                                eip_displacement = math_byte ^ 0x6A
+                                eip_displacement = math_byte ^ key_eip
                                 eip_displacement = eip_displacement - 2
                                 patch_instruction = bytearray()
                                 patch_instruction.append(0xeb)
@@ -560,7 +560,7 @@ def string_decryption(address):
                                 math_byte = mem.getByte(math_addr)
                                 math_byte = math_byte & 0xFF
                                 ##print(math_byte)
-                                eip_displacement = math_byte ^ 0x6A
+                                eip_displacement = math_byte ^ key_eip
                                 eip_displacement = eip_displacement - 2
                                 patch_instruction = bytearray()
                                 patch_instruction.append(0xeb)
