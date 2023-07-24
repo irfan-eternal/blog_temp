@@ -137,8 +137,14 @@ def handlememoryviolationException():
     dis.disassemble(currentProgram.getMinAddress(), None)
     
     address_array3 = []
+    max = currentProgram.getMaxAddress()
+    a = None
+    a = listing.getInstructionAt​(max)
+    while (a == None):
+         max = max.add(-1)
+         a = listing.getInstructionAt​(max)
     
-    while(inst.getAddress() != currentProgram.getMaxAddress()):
+    while(inst.getAddress() != ):
             mn =inst.getMnemonicString()
             if mn == "PUSH":
                 nxtinst = inst.getNext()
