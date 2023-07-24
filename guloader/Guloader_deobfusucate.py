@@ -136,7 +136,7 @@ def handlememoryviolationException():
     
     address_array3 = []
     
-    while(inst.getAddress() != toAddr("0x190ba")):
+    while(inst.getAddress() != currentProgram.getMaxAddress()):
             mn =inst.getMnemonicString()
             if mn == "PUSH":
                 nxtinst = inst.getNext()
