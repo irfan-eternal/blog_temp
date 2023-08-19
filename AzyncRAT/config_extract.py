@@ -3,6 +3,8 @@ from Crypto.Cipher import AES
 from Crypto.Protocol import KDF
 import hashlib
 import hmac
+
+
 def unpad(s):
     return s[:-ord(s[len(s)-1:])]
 def decrypt(enc):
