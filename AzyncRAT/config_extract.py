@@ -7,6 +7,7 @@ import hmac
 
 def unpad(s):
     return s[:-ord(s[len(s)-1:])]
+    
 def decrypt(enc):
   enc = base64.b64decode(enc)
   password = base64.b64decode("W1h0cU9mc0E3S0VFcEt1Y3F4d1BkZTRMTk1vZ1A5aWY=");
